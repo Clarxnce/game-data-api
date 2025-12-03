@@ -3,7 +3,7 @@ import requests
 from dotenv import load_dotenv
 import os
 
-app = FastAPI()
+app = FastAPI(title="Video Game Data API", version="1.0.0")
 
 load_dotenv()
 
@@ -22,8 +22,8 @@ def get_genre_info():
 
 
 @app.get("/")
-def get_root():
-    return {"Simple Game Data Retrieval API"}
+def root():
+    return {"message": "Video Game Data API"}
 
 
 @app.get("/genres")
