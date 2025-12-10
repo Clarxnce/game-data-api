@@ -7,10 +7,9 @@ Imports Games, Developers, Genres, Publishers, Platforms and Creators from RAWG 
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import text
 from app.database import engine, Base
-from app.models.models import Game, Developer, Genre, Publisher, Platform, Creator, game_platform, game_genre
-from rawg_client import get_field_data
-import mappers
-
+from app.models.models import game_platform, game_genre
+from data.rawg_client import get_field_data
+from data import mappers
 
 # Create database tables
 Base.metadata.create_all(bind=engine)
@@ -18,8 +17,6 @@ Base.metadata.create_all(bind=engine)
 # Create Session
 SessionLocal = sessionmaker(bind=engine)
 db = SessionLocal()
-
-
 
 def seed_database():
     print("Seeding Video Game Data dataset")
