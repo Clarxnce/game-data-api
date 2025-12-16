@@ -1,25 +1,20 @@
 from fastapi import FastAPI
+from app.routers import developers, creators, genres, platforms, publishers
 
 
 app = FastAPI(title="Video Game Data API", version="1.0.0")
+
+# Include routers
+app.include_router(developers.router)
+app.include_router(creators.router)
+app.include_router(genres.router)
+app.include_router(platforms.router)
+app.include_router(publishers.router)
 
 
 @app.get("/")
 def root():
     return {"message": "Video Game Data API"}
-
-@app.get("/games")
-def get_genres():
-    return {"message": "Games"}
-
-@app.get("/developers")
-def get_genres():
-    return {"message": "Developers"}
-
-@app.get("/genres")
-def get_genres():
-    return {"message": "Genres"}
-
 
 if __name__ == "__main__":
     import uvicorn
