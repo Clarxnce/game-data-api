@@ -2,7 +2,6 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from app.database import get_db
 from app.models.models import Platform
-from app.schemas.schemas import Platform as PlatformSchema
 
 router = APIRouter(prefix="/platforms", tags=["platforms"])
 

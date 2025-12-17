@@ -2,7 +2,6 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from app.database import get_db
 from app.models.models import Publisher
-from app.schemas.schemas import Publisher as PublisherSchema
 
 router = APIRouter(prefix="/publishers", tags=["publishers"])
 

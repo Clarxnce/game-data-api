@@ -70,7 +70,7 @@ class GameBase(BaseModel):
     name: str
     slug: str
     genre: List[Genre]
-    released: date
+    release_date: date
     rating: Decimal
     metacritic_score: int
     esrb_rating: Optional[str]

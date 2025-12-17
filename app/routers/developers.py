@@ -2,7 +2,6 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from app.database import get_db
 from app.models.models import Developer
-from app.schemas.schemas import Developer as DeveloperSchema
 
 router = APIRouter(prefix="/developers", tags=["developers"])
 
